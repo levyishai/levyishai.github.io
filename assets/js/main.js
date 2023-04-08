@@ -12,6 +12,15 @@
 		$main = $('#main'),
 		$navPanelToggle, $navPanel, $navPanelInner;
 
+	fetch('https://api.spiget.org/v2/resources/101603')
+		.then(response => response.json())
+		.then(data => {
+			const downloads = data.downloads;
+			const downloadsInt = parseInt(downloads);
+			document.getElementById('downloads').textContent = downloadsInt;
+		})
+		.catch(error => console.error(error));
+
 	// Breakpoints.
 		breakpoints({
 			default:   ['1681px',   null       ],
