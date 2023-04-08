@@ -16,8 +16,7 @@
 		.then(response => response.json())
 		.then(data => {
 			const downloads = data.downloads;
-			const downloadsInt = parseInt(downloads);
-			document.getElementById('downloads').textContent = downloadsInt;
+			document.getElementById('downloads').textContent = parseInt(downloads);
 		})
 		.catch(error => console.error(error));
 
